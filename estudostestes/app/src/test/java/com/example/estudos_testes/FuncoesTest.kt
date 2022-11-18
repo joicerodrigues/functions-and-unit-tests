@@ -348,10 +348,13 @@ class FuncoesTest {
     fun returnDivisionOdd(){
         val teste = ArrayList<Int>()
         // adding elements
-        teste.add(9)
         teste.add(0)
+        teste.add(0)
+        teste.add(64)
         teste.add(45)
+        teste.add(4)
         teste.add(90)
+        teste.add(2)
 
         val resultFinal = ArrayList<Int>()
         // adding elements
@@ -359,8 +362,30 @@ class FuncoesTest {
         resultFinal.add(45)
         resultFinal.add(90)
 
-        val resultActual = functionsTest.returnDivision(teste,9)
-        assertEquals(resultFinal, resultActual)
+        val resultActual = functionsTest.returnDivision(teste,2)
+        assertEquals(0, resultActual)
+    }
+
+    @Test
+    fun returnDivisionNull(){
+        val resultActual = functionsTest.returnDivision(null,2)
+        assertEquals(null, resultActual)
+    }
+
+    @Test
+    fun returnDivisionNulla(){
+        val teste = ArrayList<Int>()
+        // adding elements
+        teste.add(0)
+        teste.add(0)
+        teste.add(64)
+        teste.add(45)
+        teste.add(4)
+        teste.add(90)
+        teste.add(2)
+
+        val resultActual = functionsTest.returnDivision(teste,null)
+        assertEquals(null, resultActual)
     }
 
 }

@@ -281,11 +281,15 @@ class Funcoes() {
         return sum
     }
 
-    fun returnDivision(array: ArrayList<Int>, a: Int): ArrayList<Int> {
+    fun returnDivision(array: ArrayList<Int>?, a: Int?): ArrayList<Int>? {
         val resultFinal = ArrayList<Int>()
-        for (i in 0..array.size - 1) {
-            if (array[i] % a == 0 && array[i] != 0)
-                resultFinal.add(array[i])
+        if (array != null && a != null) {
+            for (i in 0..array.size - 1) {
+                if (array[i] % a == 0 && array[i] != 0)
+                    resultFinal.add(array[i])
+            }
+        }else{
+            return null
         }
         return resultFinal
     }
